@@ -11,21 +11,21 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', apiRoutes);
 
-// app.listen(ServerConfig.PORT, () => {
-//     console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
-// });
-
-app.listen(ServerConfig.PORT, async () => {
+app.listen(ServerConfig.PORT, () => {
     console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
-    try {
-        const response = await mailsender.sendMail({
-            from: ServerConfig.GMAIL_EMAIL,
-            to: 'anujsingh1234567892003@gmail.com',
-            subject: 'Is the service working ? now as well',
-            text: 'Yes it is working'
-        });
-        console.log(response);
-    } catch(error) {
-        console.log(error);
-    }
 });
+
+// app.listen(ServerConfig.PORT, async () => {
+//     console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
+//     try {
+//         const response = await mailsender.sendMail({
+//             from: ServerConfig.GMAIL_EMAIL,
+//             to: 'anujsingh1234567892003@gmail.com',
+//             subject: 'Is the service working ? now as well',
+//             text: 'Yes it is working'
+//         });
+//         console.log(response);
+//     } catch(error) {
+//         console.log(error);
+//     }
+// });
